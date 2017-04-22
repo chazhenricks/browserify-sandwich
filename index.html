@@ -10,8 +10,8 @@
 
     <section>
         <article>
-            BREAD
-            <select name="bread">
+            BREAD<br>
+            <select name="bread" id="bread">
                 <option value="wheat">Wheat</option>
                 <option value="white">White</option>
                 <option value="rye">Rye</option>
@@ -21,26 +21,47 @@
 
         <article>
             MEAT<br>
-            <input type="checkbox" value ="ham">Ham
-            <input type="checkbox" value ="turkey">Turkey
-            <input type="checkbox" value ="salami">Salami
-            <input type="checkbox" value ="bacon">Bacon
-            <input type="checkbox" value ="none">No Meat
+            <input type="checkbox" name="meat" value ="ham" price="1.5">Ham
+            <input type="checkbox" name="meat"  value ="turkey" price="1.5">Turkey
+            <input type="checkbox" name="meat"  value ="salami" price="1.5">Salami
+            <input type="checkbox" name="meat"  value ="bacon" price="1.5" >Bacon
+            <input type="checkbox" name="meat" value ="none" price="1.5" >No Meat
         </article>
 
         <article>
-            CHEESE
-            <select name="cheese">
-                <option value="ham">Ham</option>
-                <option value="turkey">Turkey</option>
-                <option value="bacon">Bacon</option>
-                <option value="chicken">Chicken</option>
+            CHEESE<br>
+            <select name="cheese" id="cheese">
+                <option value="cheddar">Cheddar</option>
+                <option value="swiss">Swiss</option>
+                <option value="havarti">Havarti</option>
+                <option value="provolone">Provolone</option>
             </select>
         </article>
 
+        <article>
+            CONDIMENTS<br>
+            <input type="checkbox" name="condom" value ="mustard">Mustard
+            <input type="checkbox" name="condom" value ="mayo">Mayo
+            <input type="checkbox" name="condom" value ="tomato">Avacado
+        </article>
 
+        <article>
+            VEGGIES<br>
+            <input type="checkbox" name="veggie" value ="lettuce">Lettuce
+            <input type="checkbox" name="veggie" value ="tomato">Tomato
+            <input type="checkbox" name="veggie" value ="peppers">Peppers
+            <input type="checkbox" name="veggie" value ="onions">Onions
+        </article>
     </section>
 
+    <section id="sandwich-total"></section>
+
 <script src="javascripts/sandwichmaker.js"></script>
+<script src="javascripts/bread.js"></script>
+<script src="javascripts/meat.js"></script>
+<script src="javascripts/cheese.js"></script>
+<script src="javascripts/condom.js"></script>
+<script src="javascripts/veggies.js"></script>
+<script src="javascripts/DOMHandler.js"></script>
 </body>
 </html>
