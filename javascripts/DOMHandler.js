@@ -4,12 +4,17 @@ var finalSandwichPrice = 0;
 // Variable to hold topping that the user selects
 
 // Get a reference to the <select> element that has all the meat options
-var breadChooser = document.getElementById("bread");
+var breadChooser = document.querySelectorAll("[name=bread]");
 var meatChooser = document.querySelectorAll("[name=meat]");
 var veggieChooser = document.querySelectorAll("[name=veggie]");
-var cheeseChooser = document.getElementById("cheese");
+var cheeseChooser = document.querySelectorAll("[name=cheese]");
 var condomChooser = document.querySelectorAll("[name=condom]");
 
+var sandwichTotal = document.getElementById("sandwich-total");
+
+function domWrite(){
+sandwichTotal.innerHTML = "<p>The total for your sandwich is $" + finalSandwichPrice + "</p>";
+}
 
 
   // A <select> element broadcasts a change event, so you listen for it
@@ -25,41 +30,56 @@ var condomChooser = document.querySelectorAll("[name=condom]");
 // });
 
 
-
- breadChooser.addEventListener("change", function(event){
+for(var i=0;i<breadChooser.length;i++){
+ breadChooser[i].addEventListener("click", function(event){
             sandwichMaker.addBread(event.target.value);
-            console.log("selectedBread", sandwichMaker.getBread());
+            sandwichMaker.addTopping(sandwichMaker.getBread());
+            finalSandwichPrice = sandwichMaker.getTotalPrice();
+            console.log("finalSandwichPrice", finalSandwichPrice);
+            domWrite()
         });
+}
 
 for (var i=0;i<meatChooser.length;i++){
-    meatChooser[i].addEventListener("change", function(event){
+    meatChooser[i].addEventListener("click", function(event){
         sandwichMaker.addMeat(event.target.value, event.target.price);
-        //console.log("selectedMeats", sandwichMaker.getMeat());
-        console.log("meatprice", event.target["data-price"])
+        sandwichMaker.addTopping(sandwichMaker.getMeat());
+        finalSandwichPrice = sandwichMaker.getTotalPrice();
+        console.log("finalSandwichPrice", finalSandwichPrice);
+        domWrite()
     });
 }
 
 
 for (var i=0;i<veggieChooser.length;i++){
-    veggieChooser[i].addEventListener("change", function(event){
+    veggieChooser[i].addEventListener("click", function(event){
         sandwichMaker.addVeggies(event.target.value);
-        console.log("selectedVeggie", sandwichMaker.getVeggies());
+        sandwichMaker.addTopping(sandwichMaker.getVeggies());
+        finalSandwichPrice = sandwichMaker.getTotalPrice();
+        console.log("finalSandwichPrice", finalSandwichPrice);
+        domWrite()
     });
 }
 
-
-cheeseChooser.addEventListener("change", function(event){
-    selectedCheese = event.target.value;
-    console.log("selectedCheese", selectedCheese);
-});
-
-for (var i=0;i<condomChooser.length;i++){
-        condomChooser[i].addEventListener("change", function(event){
-            sandwichMaker.addCondom(event.target.value);
-            console.log("selectedCondom", sandwichMaker.getCondom());
-        });
+for (var i=0;i<cheeseChooser.length;i++){
+    cheeseChooser[i].addEventListener("click", function(event){
+        sandwichMaker.addCheese(event.target.value);
+        sandwichMaker.addTopping(sandwichMaker.getCheese());
+        finalSandwichPrice = sandwichMaker.getTotalPrice();
+        console.log("finalSandwichPrice", finalSandwichPrice);
+        domWrite()
+    });
 }
 
+for (var i=0;i<condomChooser.length;i++){
+        condomChooser[i].addEventListener("click", function(event){
+            sandwichMaker.addCondom(event.target.value);
+            sandwichMaker.addTopping(sandwichMaker.getCondom());
+            finalSandwichPrice = sandwichMaker.getTotalPrice();
+            console.log("finalSandwichPrice", finalSandwichPrice);
+            domWrite()
+        });
+}
 
 
 

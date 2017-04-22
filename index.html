@@ -10,47 +10,49 @@
 
     <section>
         <article>
-            BREAD<br>
-            <select name="bread" id="bread">
-                <option value="wheat">Wheat</option>
-                <option value="white">White</option>
-                <option value="rye">Rye</option>
-                <option value="pumpernickle">Pumpernickle</option>
+            <h3>Bread</h3>
+            <label class="options"><input type="radio" value="white" name="bread"> White</label>
+            <label class="options"><input type="radio" value="wheat" name="bread"> Wheat</label>
+            <label class="options"><input type="radio" value="rye" name="bread"> Rye</label>
+            <label class="options"><input type="radio" value="pumpernickle" name="bread"> Pumpernickle</label>
+            <label class="options"><input type="radio" value="none" name="bread"> None</label>
+        </article>
+
+        <article>
+            <h3> Meats </h3>
+            <label class="options"><input type="checkbox" value="ham" name="meat"> Ham</label>
+            <label class="options"><input type="checkbox" value="turkey" name="meat"> Turkey</label>
+            <label class="options"><input type="checkbox" value="salami" name="meat"> Salami</label>
+            <label class="options"><input type="checkbox" value="bologna" name="meat"> Bologna</label>
+            <label class="options"><input type="checkbox" value="chicken" name="meat"> Chicken</label>
+            <label class="options"><input type="checkbox" value="none" name="meat"> None</label>
+        </article>
+
+        <article>
+            <h3> Cheese </h3>
+            <label class="options"><input type="checkbox" value="cheddar" name="cheese"> Cheddar</label>
+            <label class="options"><input type="checkbox" value="swiss" name="cheese"> Swiss</label>
+            <label class="options"><input type="checkbox" value="provolone" name="cheese"> Provolone</label>
+            <label class="options"><input type="checkbox" value="havarti" name="cheese"> Havarti</label>
+            <label class="options"><input type="checkbox" value="none" name="cheese"> None</label>
             </select>
         </article>
 
         <article>
-            MEAT<br>
-            <input type="checkbox" name="meat" value ="ham" price="1.5">Ham
-            <input type="checkbox" name="meat"  value ="turkey" price="1.5">Turkey
-            <input type="checkbox" name="meat"  value ="salami" price="1.5">Salami
-            <input type="checkbox" name="meat"  value ="bacon" price="1.5" >Bacon
-            <input type="checkbox" name="meat" value ="none" price="1.5" >No Meat
+            <h3> Condiments </h3>
+            <label class="options"><input type="checkbox" value="mustard" name="condom"> Mustard</label>
+            <label class="options"><input type="checkbox" value="mayo" name="condom"> Mayo</label>
+            <label class="options"><input type="checkbox" value="avacado" name="condom"> Avacado</label>
+            <label class="options"><input type="checkbox" value="none" name="condom"> None</label>
         </article>
 
         <article>
-            CHEESE<br>
-            <select name="cheese" id="cheese">
-                <option value="cheddar">Cheddar</option>
-                <option value="swiss">Swiss</option>
-                <option value="havarti">Havarti</option>
-                <option value="provolone">Provolone</option>
-            </select>
-        </article>
-
-        <article>
-            CONDIMENTS<br>
-            <input type="checkbox" name="condom" value ="mustard">Mustard
-            <input type="checkbox" name="condom" value ="mayo">Mayo
-            <input type="checkbox" name="condom" value ="tomato">Avacado
-        </article>
-
-        <article>
-            VEGGIES<br>
-            <input type="checkbox" name="veggie" value ="lettuce">Lettuce
-            <input type="checkbox" name="veggie" value ="tomato">Tomato
-            <input type="checkbox" name="veggie" value ="peppers">Peppers
-            <input type="checkbox" name="veggie" value ="onions">Onions
+            <h3> Veggies </h3>
+            <label class="options"><input type="checkbox" name="veggie" value ="lettuce">Lettuce</label>
+            <label class="options"><input type="checkbox" name="veggie" value ="tomato">Tomato</label>
+            <label class="options"><input type="checkbox" name="veggie" value ="peppers">Peppers</label>
+            <label class="options"><input type="checkbox" name="veggie" value ="onions">Onions</label>
+            <label class="options"><input type="checkbox" value="none" name="veggie"> None</label>
         </article>
     </section>
 
