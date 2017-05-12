@@ -1,3 +1,5 @@
+"use strict";
+
 var sandwichMaker = (function() {
 
   // Private variable to store the price
@@ -16,5 +18,5 @@ var sandwichMaker = (function() {
 
 
 
-console.log("sandwichMaker", sandwichMaker)
+console.log("sandwichMaker", sandwichMaker);
 

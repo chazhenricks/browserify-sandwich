@@ -1,3 +1,5 @@
+"use strict";
+
 // Variable to hold the final price. Default to 0.
 var finalSandwichPrice = 0;
 
@@ -36,7 +38,7 @@ for(var i=0;i<breadChooser.length;i++){
             sandwichMaker.addTopping(sandwichMaker.getBread());
             finalSandwichPrice = sandwichMaker.getTotalPrice();
             console.log("finalSandwichPrice", finalSandwichPrice);
-            domWrite()
+            domWrite();
         });
 }
 
@@ -46,7 +48,7 @@ for (var i=0;i<meatChooser.length;i++){
         sandwichMaker.addTopping(sandwichMaker.getMeat());
         finalSandwichPrice = sandwichMaker.getTotalPrice();
         console.log("finalSandwichPrice", finalSandwichPrice);
-        domWrite()
+        domWrite();
     });
 }
 
@@ -57,7 +59,7 @@ for (var i=0;i<veggieChooser.length;i++){
         sandwichMaker.addTopping(sandwichMaker.getVeggies());
         finalSandwichPrice = sandwichMaker.getTotalPrice();
         console.log("finalSandwichPrice", finalSandwichPrice);
-        domWrite()
+        domWrite();
     });
 }
 
@@ -67,7 +69,7 @@ for (var i=0;i<cheeseChooser.length;i++){
         sandwichMaker.addTopping(sandwichMaker.getCheese());
         finalSandwichPrice = sandwichMaker.getTotalPrice();
         console.log("finalSandwichPrice", finalSandwichPrice);
-        domWrite()
+        domWrite();
     });
 }
 
@@ -77,7 +79,7 @@ for (var i=0;i<condomChooser.length;i++){
             sandwichMaker.addTopping(sandwichMaker.getCondom());
             finalSandwichPrice = sandwichMaker.getTotalPrice();
             console.log("finalSandwichPrice", finalSandwichPrice);
-            domWrite()
+            domWrite();
         });
 }
 

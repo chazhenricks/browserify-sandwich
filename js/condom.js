@@ -1,3 +1,5 @@
+"use strict";
+
 var sandwichMaker = function(oldSandwich){
     var condomPrice = {
         "mustard": 0,
@@ -12,7 +14,8 @@ var sandwichMaker = function(oldSandwich){
                 condomCounter += condomPrice[selectedCondom[i]];
             }
             return condomCounter;
-        },
+        };
+
         oldSandwich.addCondom = function(condom){
             if(condom === "none"){
                 selectedCondom = ["none"];
@@ -20,8 +23,7 @@ var sandwichMaker = function(oldSandwich){
 
                 selectedCondom.push(condom);
             }
-
-        }
+        };
 
         return oldSandwich;
 }(sandwichMaker);

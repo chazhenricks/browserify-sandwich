@@ -1,3 +1,5 @@
+"use strict";
+
 var sandwichMaker = function(oldSandwich){
     var meatPrice = {
         "ham": 2,
@@ -16,15 +18,16 @@ var sandwichMaker = function(oldSandwich){
                 meatCounter += meatPrice[selectedMeat[i]];
             }
             return meatCounter;
-        },
+        };
+
         oldSandwich.addMeat = function(meat){
             if (meat === "none"){
                 selectedMeat = ["none"];
             }else {
                 selectedMeat.push(meat);
 
-            };
-        }
+            }
+        };
 
         return oldSandwich;
 }(sandwichMaker);
