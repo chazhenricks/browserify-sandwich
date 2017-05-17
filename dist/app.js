@@ -51,14 +51,16 @@ let cheesePrice = {
 };
 
 cheeseSelection.addCheese = function(cheese){
-    if (cheese === "none"){
-        selectedCheese = ["none"];
-    } else if(cheese === ""){
-        selectedCheese = ["none"];
-    }else{
-        selectedCheese = [cheese];
+
+    var index = selectedCheese.indexOf(cheese);
+    if (index === -1 && cheese === "none") {
+      selectedCheese = ["none"];
+    } else if (index === -1) {
+      selectedCheese.push(cheese);
+    } else {
+        selectedCheese.splice(index, 1);
     }
-};
+  };
 
 module.exports = cheeseSelection;
 
