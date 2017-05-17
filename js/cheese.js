@@ -1,6 +1,6 @@
 "use strict";
 
-let cheese = {};
+let cheeseSelection = {};
 var selectedCheese = [];
 
 let cheesePrice = {
@@ -11,23 +11,26 @@ let cheesePrice = {
         "none": 0
     };
 
- cheese.getCheese = function(){
+ cheeseSelection.getCheese = function(){
     var cheeseCounter = 0;
     for(var i=0;i<selectedCheese.length;i++){
+
         cheeseCounter += cheesePrice[selectedCheese[i]];
     }
     return cheeseCounter;
 };
 
-cheese.addCheese = function(cheese){
+cheeseSelection.addCheese = function(cheese){
     if (cheese === "none"){
         selectedCheese = ["none"];
-    } else {
-        selectedCheese.push(cheese);
+    } else if(cheese === ""){
+        selectedCheese = ["none"];
+    }else{
+        selectedCheese = [cheese];
     }
 };
 
-module.exports = cheese;
+module.exports = cheeseSelection;
 
 
 

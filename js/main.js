@@ -27,18 +27,6 @@ sandwichTotal.html(`<p>The total for your sandwich is $ ${finalSandwichPrice}</p
 }
 
 
-  // A <select> element broadcasts a change event, so you listen for it
-  // and get the value of the topping from your augmented IIFE
-
-// meatChooser.addEventListener("change", function(event) {
-//   // Get the value chosen from the DOM
-//   selectedTopping = event.target.value;
-
-//   // Determine the price of the topping chosen
-
-//   // Add the topping to the SandwichMaker to increase the total price
-// });
-
 
 
 $("[name='bread']").click(function(event){
@@ -50,7 +38,8 @@ $("[name='bread']").click(function(event){
 
 
 cheeseChooser.on("click", function(event){
-    Cheese.addCheese(event.target.value);
+    var checkedCheese = $("[name='cheese']:checked");
+    Cheese.addCheese(checkedCheese.val());
     sandwichMaker.addTopping(Cheese.getCheese());
     finalSandwichPrice = sandwichMaker.getTotalPrice();
     console.log("finalSandwichPrice", finalSandwichPrice);
@@ -58,20 +47,31 @@ cheeseChooser.on("click", function(event){
 
 meatChooser.on("click", function(event){
     Meat.addMeat(event.target.value);
+    sandwichMaker.addTopping(Meat.getMeat());
+    finalSandwichPrice = sandwichMaker.getTotalPrice();
+    console.log("finalSandwichPrice", finalSandwichPrice);
+
+});
+
+veggieChooser.on("click", function(event){
+    Veggies.addVeggies(event.target.value);
+    sandwichMaker.addTopping(Veggies.getVeggies());
+    finalSandwichPrice = sandwichMaker.getTotalPrice();
+    console.log("finalSandwichPrice", finalSandwichPrice);
+
+});
+
+condomChooser.on("click", function(event){
+    Condom.addCondom(event.target.value);
+    sandwichMaker.addTopping(Condom.getCondom());
+    finalSandwichPrice = sandwichMaker.getTotalPrice();
+    console.log("finalSandwichPrice", finalSandwichPrice);
+
 });
 
 
 
 
-// for (var i=0;i<meatChooser.length;i++){
-//     meatChooser[i].addEventListener("click", function(event){
-//         sandwichMaker.addMeat(event.target.value, event.target.price);
-//         sandwigchMaker.addTopping(sandwichMaker.getMeat());
-//         finalSandwichPrice = sandwichMaker.getTotalPrice();
-//         console.log("finalSandwichPrice", finalSandwichPrice);
-//         domWrite();
-//     });
-// }
 
 
 
@@ -108,27 +108,11 @@ meatChooser.on("click", function(event){
 
 
 
-// for (var i=0;i<veggieChooser.length;i++){
-//     veggieChooser[i].addEventListener("click", function(event){
-//         sandwichMaker.addVeggies(event.target.value);
-//         sandwichMaker.addTopping(sandwichMaker.getVeggies());
-//         finalSandwichPrice = sandwichMaker.getTotalPrice();
-//         console.log("finalSandwichPrice", finalSandwichPrice);
-//         domWrite();
-//     });
-// }
 
 
 
-// for (var i=0;i<condomChooser.length;i++){
-//         condomChooser[i].addEventListener("click", function(event){
-//             sandwichMaker.addCondom(event.target.value);
-//             sandwichMaker.addTopping(sandwichMaker.getCondom());
-//             finalSandwichPrice = sandwichMaker.getTotalPrice();
-//             console.log("finalSandwichPrice", finalSandwichPrice);
-//             domWrite();
-//         });
-// }
+
+
 
 
 
