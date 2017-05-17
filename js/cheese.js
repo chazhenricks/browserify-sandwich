@@ -1,32 +1,34 @@
 "use strict";
 
-var sandwichMaker = function(oldSandwich){
-    var cheesePrice = {
+let cheese = {};
+var selectedCheese = [];
+
+let cheesePrice = {
         "cheddar": 0.5,
         "swiss": 0.5,
         "provolone": 0.5,
         "havarti": 0.5,
         "none": 0
     };
-    var selectedCheese = [];
-        oldSandwich.getCheese = function(){
-            var cheeseCounter = 0;
-            for(var i=0;i<selectedCheese.length;i++){
-                cheeseCounter += cheesePrice[selectedCheese[i]];
-            }
-            return cheeseCounter;
-        };
 
-        oldSandwich.addCheese = function(cheese){
-            if (cheese === "none"){
-                selectedCheese = ["none"];
-            } else {
-                selectedCheese.push(cheese);
-            }
-        };
+ cheese.getCheese = function(){
+    var cheeseCounter = 0;
+    for(var i=0;i<selectedCheese.length;i++){
+        cheeseCounter += cheesePrice[selectedCheese[i]];
+    }
+    return cheeseCounter;
+};
 
-        return oldSandwich;
-}(sandwichMaker);
+cheese.addCheese = function(cheese){
+    if (cheese === "none"){
+        selectedCheese = ["none"];
+    } else {
+        selectedCheese.push(cheese);
+    }
+};
+
+module.exports = cheese;
+
 
 
 

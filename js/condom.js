@@ -1,31 +1,32 @@
 "use strict";
 
-var sandwichMaker = function(oldSandwich){
-    var condomPrice = {
-        "mustard": 0,
-        "mayo": 0,
-        "avacado": 2,
-        "none": 0
-    };
-    var selectedCondom = [];
-        oldSandwich.getCondom = function(){
-            var condomCounter = 0;
-            for (var i =0;i<selectedCondom.length;i++){
-                condomCounter += condomPrice[selectedCondom[i]];
-            }
-            return condomCounter;
-        };
+let condom = {};
 
-        oldSandwich.addCondom = function(condom){
-            if(condom === "none"){
-                selectedCondom = ["none"];
-            }else{
+var selectedCondom = [];
 
-                selectedCondom.push(condom);
-            }
-        };
+var condomPrice = {
+    "mustard": 0,
+    "mayo": 0,
+    "avacado": 2,
+    "none": 0
+};
+condom.getCondom = function(){
+    var condomCounter = 0;
+    for (var i =0;i<selectedCondom.length;i++){
+        condomCounter += condomPrice[selectedCondom[i]];
+    }
+    return condomCounter;
+};
 
-        return oldSandwich;
-}(sandwichMaker);
+condom.addCondom = function(condom){
+    if(condom === "none"){
+        selectedCondom = ["none"];
+    }else{
 
+        selectedCondom.push(condom);
+    }
+};
+
+
+module.exports = condom;
 
